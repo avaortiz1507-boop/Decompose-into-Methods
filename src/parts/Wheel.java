@@ -1,0 +1,42 @@
+package parts;
+
+public class Wheel {
+    // size and pressure
+    private double size;
+    private double pressure;
+
+    // Constructor
+    public Wheel(double size, double pressure) {
+        setSize(size);
+        setPressure(pressure);
+    }
+
+    // Getters
+    public double getSize() {
+        return size;
+    }
+
+    public double getPressure() {
+        return pressure;
+    }
+
+    // Setters
+    public void setSize(double size) {
+        if (size <= 0) {
+            throw new IllegalArgumentException("Size must be positive");
+        }
+        this.size = size;
+    }
+
+    public void setPressure(double pressure) {
+        if (pressure < 0) {
+            throw new IllegalArgumentException("Pressure cannot be negative");
+        }
+        this.pressure = pressure;
+    }
+
+    @Override
+    public String toString() {
+        return "Wheel{size=" + size + ", pressure=" + pressure + "}";
+    }
+}
